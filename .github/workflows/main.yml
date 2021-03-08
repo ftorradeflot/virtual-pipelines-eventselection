@@ -27,7 +27,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: skim${{ matrix.version }}
-          path: ./skim
+          path: skim
 
   skim:
     needs: build_skim
@@ -42,4 +42,6 @@ jobs:
           name: skim6.18.04
 
       - name: skim
-        run: ./skim 
+        run: |
+          chmod +x skim
+          ./skim 
